@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react';
 import reducer, {initialState} from './reducers/index'
-import {addOne, applyNumber, changeOperation, clearDisplay} from './actions/index'
+import {addOne, applyNumber, changeOperation, clearDisplay, memoryPlus, memoryFunction, clearMemory} from './actions/index'
 
 import './App.css';
 
@@ -37,9 +37,9 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick={()=> dispatch(memoryPlus())} value={"M+"}/>
+              <CalcButton onClick={()=> dispatch(memoryFunction())} value={"MR"}/>
+              <CalcButton onClick={()=> dispatch(clearMemory())} value={"MC"}/>
             </div>
 
             <div className="row">
